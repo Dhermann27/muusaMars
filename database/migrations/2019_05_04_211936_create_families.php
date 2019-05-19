@@ -20,8 +20,8 @@ class CreateFamilies extends Migration
             $table->string('address1')->default('NEED ADDRESS');
             $table->string('address2')->nullable();
             $table->string('city')->default('Unknown');
-            $table->unsignedBigInteger('provinceid');
-            $table->foreign('provinceid')->references('id')->on('provinces');
+            $table->unsignedBigInteger('province_id');
+            $table->foreign('province_id')->references('id')->on('provinces');
             $table->string('zipcd')->default('99999');
             $table->string('country')->default('USA');
             $table->tinyInteger('is_address_current')->default('1');

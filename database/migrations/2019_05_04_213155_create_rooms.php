@@ -16,8 +16,8 @@ class CreateRooms extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('buildingid')->nullable();
-            $table->foreign('buildingid')->references('id')->on('buildings');
+            $table->unsignedBigInteger('building_id')->nullable();
+            $table->foreign('building_id')->references('id')->on('buildings');
             $table->string('room_number');
             $table->integer('capacity');
             $table->tinyInteger('is_workshop')->default(0);

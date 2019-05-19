@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call([ChartdaySeeder::class,
+            CompensationLevelSeeder::class,
+            PronounSeeder::class,
+            ProvinceSeeder::class,
+            TimeslotSeeder::class]);
     }
 }

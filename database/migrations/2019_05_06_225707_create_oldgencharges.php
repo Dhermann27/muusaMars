@@ -15,12 +15,12 @@ class CreateOldgencharges extends Migration
     {
         Schema::create('oldgencharges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('camperid');
-            $table->foreign('camperid')->references('id')->on('campers');
+            $table->unsignedBigInteger('camper_id');
+            $table->foreign('camper_id')->references('id')->on('campers');
             $table->float('charge');
             $table->string('memo')->nullable();
-            $table->unsignedBigInteger('chargetypeid');
-            $table->foreign('chargetypeid')->references('id')->on('chargetypes');
+            $table->unsignedBigInteger('chargetype_id');
+            $table->foreign('chargetype_id')->references('id')->on('chargetypes');
             $table->integer('year');
             $table->timestamps();
         });

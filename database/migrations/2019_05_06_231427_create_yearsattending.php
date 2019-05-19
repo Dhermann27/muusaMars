@@ -15,13 +15,14 @@ class CreateYearsattending extends Migration
     {
         Schema::create('yearsattending', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('camperid');
-            $table->foreign('camperid')->references('id')->on('campers');
-            $table->integer('year');
-            $table->unsignedBigInteger('programid')->nullable();
-            $table->foreign('programid')->references('id')->on('programs');
-            $table->unsignedBigInteger('roomid')->nullable();
-            $table->foreign('roomid')->references('id')->on('rooms');
+            $table->unsignedBigInteger('camper_id');
+            $table->foreign('camper_id')->references('id')->on('campers');
+            $table->unsignedBigInteger('year_id');
+            $table->foreign('year_id')->references('id')->on('years');
+            $table->unsignedBigInteger('program_id')->nullable();
+            $table->foreign('program_id')->references('id')->on('programs');
+            $table->unsignedBigInteger('room_id')->nullable();
+            $table->foreign('room_id')->references('id')->on('rooms');
             $table->integer('days')->default('6');
             $table->tinyInteger('is_setbyadmin')->default('0');
             $table->tinyInteger('is_private')->default('0');

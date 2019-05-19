@@ -15,8 +15,8 @@ class CreateRates extends Migration
     {
         Schema::create('rates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('buildingid');
-            $table->foreign('buildingid')->references('id')->on('buildings');
+            $table->unsignedBigInteger('building_id');
+            $table->foreign('building_id')->references('id')->on('buildings');
             $table->unsignedBigInteger('programid');
             $table->foreign('programid')->references('id')->on('programs');
             $table->integer('min_occupancy');

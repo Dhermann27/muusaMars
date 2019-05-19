@@ -15,8 +15,8 @@ class CreateMedicalresponses extends Migration
     {
         Schema::create('medicalresponses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('yearattendingid');
-            $table->foreign('yearattendingid')->references('id')->on('yearsattending');
+            $table->unsignedBigInteger('yearattending_id');
+            $table->foreign('yearattending_id')->references('id')->on('yearsattending');
             $table->string('parent_name');
             $table->string('youth_sponsor');
             $table->string('mobile_phone');

@@ -32,8 +32,8 @@ abstract class DuskTestCase extends BaseTestCase
             $app = require __DIR__ . '/../bootstrap/app.php';
             $kernel = $app->make(\App\Console\Kernel::class);
             $kernel->bootstrap();
-            $kernel->call('migrate:fresh');
-            echo "Database migrate:fresh\n";
+            $kernel->call('migrate:refresh --seed');
+            echo "Database migrate:refresh --seed\n";
             self::$hasSetupRun = true;
         }
     }

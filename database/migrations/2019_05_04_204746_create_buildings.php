@@ -18,7 +18,7 @@ class CreateBuildings extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('blurb')->nullable();
-            $table->enum('side', ['trout', 'lakewood', 'tent'])->nullable();
+            $table->tinyInteger('side')->nullable();
         });
         DB::update('ALTER TABLE buildings AUTO_INCREMENT = 1000');
     }

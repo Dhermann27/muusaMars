@@ -78,7 +78,7 @@ class ProvinceSeeder extends Seeder
             '__' => 'ZZ - International');
         foreach ($provinces as $code => $name) {
             DB::table('provinces')->insert([
-                'id' => $code,
+                'code' => $code,
                 'name' => $name
             ]);
         }

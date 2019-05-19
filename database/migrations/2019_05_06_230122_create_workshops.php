@@ -16,10 +16,10 @@ class CreateWorkshops extends Migration
         Schema::create('workshops', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('year');
-            $table->unsignedBigInteger('roomid');
-            $table->foreign('roomid')->references('id')->on('rooms');
-            $table->unsignedBigInteger('timeslotid');
-            $table->foreign('timeslotid')->references('id')->on('timeslots');
+            $table->unsignedBigInteger('room_id');
+            $table->foreign('room_id')->references('id')->on('rooms');
+            $table->unsignedBigInteger('timeslot_id');
+            $table->foreign('timeslot_id')->references('id')->on('timeslots');
             $table->integer('order');
             $table->string('name');
             $table->string('led_by')->nullable();

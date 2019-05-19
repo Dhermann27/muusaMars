@@ -14,12 +14,12 @@ class CreateCamperStaff extends Migration
     public function up()
     {
         Schema::create('camper__staff', function (Blueprint $table) {
-            $table->unsignedBigInteger('camperid');
-            $table->foreign('camperid')->references('id')->on('campers');
-            $table->unsignedBigInteger('staffpositionid');
-            $table->foreign('staffpositionid')->references('id')->on('staffpositions');
+            $table->unsignedBigInteger('camper_id');
+            $table->foreign('camper_id')->references('id')->on('campers');
+            $table->unsignedBigInteger('staffposition_id');
+            $table->foreign('staffposition_id')->references('id')->on('staffpositions');
             $table->timestamps();
-            $table->unique(array('camperid', 'staffpositionid'));
+            $table->unique(array('camper_id', 'staffposition_id'));
         });
     }
 

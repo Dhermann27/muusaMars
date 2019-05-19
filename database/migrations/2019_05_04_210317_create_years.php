@@ -31,9 +31,6 @@ class CreateYears extends Migration
             $table->timestamps();
         });
         DB::update('ALTER TABLE years AUTO_INCREMENT = 1000');
-        DB::unprepared('CREATE FUNCTION getcurrentyear () RETURNS INT DETERMINISTIC BEGIN
- 			RETURN(SELECT year FROM years WHERE is_current=1 LIMIT 1);
- 		END');
     }
 
     /**
@@ -43,7 +40,6 @@ class CreateYears extends Migration
      */
     public function down()
     {
-        DB::unprepared('DROP FUNCTION IF EXISTS getcurrentyear');
         Schema::dropIfExists('years');
     }
 }

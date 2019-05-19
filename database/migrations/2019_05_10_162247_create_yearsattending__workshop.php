@@ -14,14 +14,14 @@ class CreateYearsattendingWorkshop extends Migration
     public function up()
     {
         Schema::create('yearsattending__workshop', function (Blueprint $table) {
-            $table->unsignedBigInteger('yearattendingid');
-            $table->foreign('yearattendingid')->references('id')->on('yearsattending');
-            $table->unsignedBigInteger('workshopid');
-            $table->foreign('workshopid')->references('id')->on('workshops');
+            $table->unsignedBigInteger('yearattending_id');
+            $table->foreign('yearattending_id')->references('id')->on('yearsattending');
+            $table->unsignedBigInteger('workshop_id');
+            $table->foreign('workshop_id')->references('id')->on('workshops');
             $table->tinyInteger('is_leader')->default('0');
             $table->tinyInteger('is_enrolled')->default('0');
             $table->timestamps();
-            $table->unique(array('yearattendingid', 'workshopid'), 'yaid__wid_index');
+            $table->unique(array('yearattending_id', 'workshop_id'), 'yaid__wid_index');
         });
     }
 

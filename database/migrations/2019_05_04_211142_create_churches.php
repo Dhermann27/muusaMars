@@ -18,8 +18,8 @@ class CreateChurches extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('city');
-            $table->unsignedBigInteger('provinceid');
-            $table->foreign('provinceid')->references('id')->on('provinces');
+            $table->unsignedBigInteger('province_id');
+            $table->foreign('province_id')->references('id')->on('provinces');
             $table->timestamps();
         });
         DB::update('ALTER TABLE churches AUTO_INCREMENT = 1000');

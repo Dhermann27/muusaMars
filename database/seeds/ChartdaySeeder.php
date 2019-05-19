@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class StaticdateSeeder extends Seeder
+class ChartdaySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -208,9 +208,9 @@ class StaticdateSeeder extends Seeder
             194 => '0000-07-12'
         );
         foreach ($staticdates as $day => $date) {
-            DB::table('staticdates')->insert([
-                'day' => $day,
-                'date' => $date
+            DB::table('chartdays')->insert([
+                'id' => $day,
+                'dayofyear' => $date
             ]);
         }
     }

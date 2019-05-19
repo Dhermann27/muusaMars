@@ -14,12 +14,12 @@ class CreateYearsattendingVolunteer extends Migration
     public function up()
     {
         Schema::create('yearsattending__volunteer', function (Blueprint $table) {
-            $table->unsignedBigInteger('yearattendingid');
-            $table->foreign('yearattendingid')->references('id')->on('yearsattending');
-            $table->unsignedBigInteger('volunteerpositionid');
-            $table->foreign('volunteerpositionid')->references('id')->on('volunteerpositions');
+            $table->unsignedBigInteger('yearattending_id');
+            $table->foreign('yearattending_id')->references('id')->on('yearsattending');
+            $table->unsignedBigInteger('volunteerposition_id');
+            $table->foreign('volunteerposition_id')->references('id')->on('volunteerpositions');
             $table->timestamps();
-            $table->unique(array('yearattendingid', 'volunteerpositionid'), 'yaid__vpid_index');
+            $table->unique(array('yearattending_id', 'volunteerposition_id'), 'yaid__vpid_index');
         });
     }
 
